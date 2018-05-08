@@ -1,9 +1,24 @@
+// var images = [
+// "img/watermellon.jpg",
+// "img/nom.jpg",
+// "img/banana.jpg"];
 var images = [
-"img/watermellon.jpg",
-"img/nom.jpg",
-"img/banana.jpg"]
+	{
+		path:"img/watermellon.jpg",
+		desc:"watermellon outfit"
+	},
+	{
+		path:"img/nom.jpg",
+		desc:"nom nom"
+	},
+	{
+		path:"img/banana.jpg",
+		desc:"banana anyone?"
+	}
+]
 var image = document.getElementById("watermellon");
 var counter = 0;
+
 function changeImage() {
 	counter++;
 	//I want my image element to change
@@ -12,7 +27,7 @@ function changeImage() {
 	if(counter >= images.length) {
 		counter = 0;
 	}
-	console.log(counter);
-	image.src = images[counter];
+	image.src = images[counter].path;
+	image.alt = images[counter].desc;
 
 }
